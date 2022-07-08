@@ -20,3 +20,10 @@
    sudo apt update
    sudo apt install -y jenkins
    sudo systemctl status jenkins   # press q to exit 
+   
+3. Goto instance detail in aws console and copy "Public IPv4 DNS" i.e ec2-*.*.compute.amazonaws.com
+   Open chrome and access http://ec2-*.*.compute.amazonaws.com:8080
+   Paste password form the output of sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+   Customize Jenkins: Install Suggested Plugins 
+   Fill details for Create First Admin User
+   Complete details and open Jenkins homepage    
