@@ -27,3 +27,18 @@
    Customize Jenkins: Install Suggested Plugins 
    Fill details for Create First Admin User
    Complete details and open Jenkins homepage    
+
+## SonarQube Steps 
+1. Launch an instance
+   Name: SonarQube-Server 
+   Application and OS Images: Ubuntu Server 20.04 LTS
+   Instance type: t2.medium
+   Key pair: -- select your key --
+   Network settings: click on Edit 
+       Security group rule: 
+           Type: All traffic 
+   Configure storage: 50 GB 
+   Click on Launch Instance 
+   just wait for some time 
+
+2. Connect to instance and follow https://www.vultr.com/docs/install-sonarqube-on-ubuntu-20-04-lts/ 
