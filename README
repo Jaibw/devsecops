@@ -1,0 +1,22 @@
+## STEPS FOR JENKINS INSTALLATION 
+
+1. Launch an instance
+   Name: Jenkins-Server 
+   Application and OS Images: Ubuntu Server 20.04 LTS
+   Instance type: t2.medium
+   Key pair: -- select your key --
+   Network settings: click on Edit 
+       Security group rule: 
+           Type: All traffic 
+   Configure storage: 50 GB 
+   Click on Launch Instance 
+   just wait for some time 
+
+2. Connect to instance and run below commands 
+   sudo apt update 
+   sudo apt install -y openjdk-8-jdk
+   wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+   sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+   sudo apt update
+   sudo apt install -y jenkins
+   sudo systemctl status jenkins   # press q to exit 
