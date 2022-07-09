@@ -110,8 +110,14 @@ trivy image nginx
 
 
 
-# Run below commands on master 
+# Run below commands on kubernetes master 
 sudo apt update
 sudo apt -y upgrade && sudo systemctl reboot   ## wait for some time 
 wget https://raw.githubusercontent.com/Jaibw/docker/main/install_k8s_master_ubuntu_20.04.sh  
 sh install_k8s_master_ubuntu_20.04.sh
+
+# Run below commands on kubernetes worker 
+sudo apt update
+sudo apt -y upgrade && sudo systemctl reboot   ## wait for some time 
+wget https://raw.githubusercontent.com/Jaibw/docker/main/install_k8s_worker_ubuntu_20.04.sh
+sh install_k8s_worker_ubuntu_20.04.sh
