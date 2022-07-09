@@ -35,6 +35,29 @@
    Instance type: t2.medium
    
    
+
+   
+   Key pair: -- select your key --
+   Network settings: click on Edit 
+       Security group rule: 
+           Type: All traffic 
+   Configure storage: 50 GB 
+   Click on Launch Instance 
+   just wait for some time 
+
+2. Connect to instance and follow https://www.vultr.com/docs/install-sonarqube-on-ubuntu-20-04-lts/ 
+   Zip File: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.9.56886.zip 
+   
+   
+## Install Docker 
+
+wget https://gitlab.com/jai.unix/junit-demo/-/raw/main/install-docker.sh
+sh install-docker.sh 
+sudo reboot now
+
+
+
+
 docker ps 
 docker ps -a 
 docker run hello-world 
@@ -84,21 +107,3 @@ docker ps -a
 wget https://gitlab.com/jai.unix/junit-demo/-/raw/main/install-trivy.sh
 sh install-trivy.sh 
 trivy image nginx 
-   
-   Key pair: -- select your key --
-   Network settings: click on Edit 
-       Security group rule: 
-           Type: All traffic 
-   Configure storage: 50 GB 
-   Click on Launch Instance 
-   just wait for some time 
-
-2. Connect to instance and follow https://www.vultr.com/docs/install-sonarqube-on-ubuntu-20-04-lts/ 
-   Zip File: https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.9.56886.zip 
-   
-   
-## Install Docker 
-
-wget https://gitlab.com/jai.unix/junit-demo/-/raw/main/install-docker.sh
-sh install-docker.sh 
-sudo reboot now
