@@ -33,6 +33,58 @@
    Name: SonarQube-Server 
    Application and OS Images: Ubuntu Server 20.04 LTS
    Instance type: t2.medium
+   
+   
+docker ps 
+docker ps -a 
+docker run hello-world 
+docker ps -a
+docker run --name NAME hello-world 
+docker ps -a
+docker run --name webserver01 nginx    ## ctrl+c to exit 
+docker run -d --name webserver02 nginx 
+docker ps -a
+docker images
+docker pull redis
+docker images
+
+docker ps 
+docker ps -a 
+docker stop webserver02
+docker ps 
+docker ps -a
+docker start webserver01
+docker start webserver02
+docker ps 
+docker ps -a
+docker rm CONTAINER-NAME CONTAINER-NAME CONTAINER-NAME
+docker ps 
+docker ps  -a
+docker stop webserver01
+docker kill webserver02
+docker ps -a
+docker rm webserver01 webserver02
+docker ps -a
+docker images
+docker rmi redis nginx hello-world
+docker images
+
+
+
+git clone https://github.com/Jaibw/FrozenYogurtShop.git
+cd FrozenYogurtShop
+ls
+cat Dockerfile
+docker build -t website001 . 
+docker images
+docker run -d --name server01 website001
+docker ps -a
+
+
+wget https://gitlab.com/jai.unix/junit-demo/-/raw/main/install-trivy.sh
+sh install-trivy.sh 
+trivy image nginx 
+   
    Key pair: -- select your key --
    Network settings: click on Edit 
        Security group rule: 
