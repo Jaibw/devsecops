@@ -107,3 +107,11 @@ docker ps -a
 wget https://gitlab.com/jai.unix/junit-demo/-/raw/main/install-trivy.sh
 sh install-trivy.sh 
 trivy image nginx 
+
+
+
+# Run below commands on master 
+sudo apt update
+sudo apt -y upgrade && sudo systemctl reboot   ## wait for some time 
+wget https://raw.githubusercontent.com/Jaibw/docker/main/install_k8s_master_ubuntu_20.04.sh  
+sh install_k8s_master_ubuntu_20.04.sh
