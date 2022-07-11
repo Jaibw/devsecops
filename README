@@ -164,3 +164,20 @@ kubectl get all
 kubectl get all  | grep YOURNAME 
 kubectl get svc  | grep YOURNAME 
 open your chrome http://PUBLIC-MASTER-IP:NODEPORT   eg. http://13.57.255.215:32161
+
+
+## Jenkins integration with Kubernetes 
+
+# Run below commands on kube-master node  
+sudo su 
+sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g'  /etc/ssh/sshd_config
+passwd ubuntu
+systemctl restart ssh
+
+# Run below commands jenkins server 
+wget https://raw.githubusercontent.com/Jaibw/docker/main/install_k8s_worker_ubuntu_20.04.sh
+sh install_k8s_worker_ubuntu_20.04.sh
+sudo su jenkins 
+mkdir ~/.kube 
+scp ubuntu@MASTER-NODE-IP:/home/ubuntu/.kube/config ~/.kube/config 
+kubectl get nodes 
