@@ -104,6 +104,8 @@ docker run -d --name server01 website001
 docker ps -a
 
 
+
+
 wget https://gitlab.com/jai.unix/junit-demo/-/raw/main/install-trivy.sh
 sh install-trivy.sh 
 trivy image nginx 
@@ -181,3 +183,24 @@ sudo su jenkins
 mkdir ~/.kube 
 scp ubuntu@MASTER-NODE-IP:/home/ubuntu/.kube/config ~/.kube/config 
 kubectl get nodes 
+
+
+
+## terraform/ansible integration with Jenkins 
+sudo su 
+apt update
+sudo apt install awscli
+wget -qO - terraform.gpg https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/terraform-archive-keyring.gpg
+sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/terraform-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release 
+-cs) main" > /etc/apt/sources.list.d/terraform.list
+apt update
+apt install terraform
+apt install ansible
+su - jenkins 
+aws configure
+git clone https://github.com/Jaibw/devsecops.git
+cd devsecops
+terraform init -no-color 
+terraform plan -no-color 
+terraform apply -no-color -auto-approve
+#terraform destroy -no-color -auto-approve
