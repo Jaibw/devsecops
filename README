@@ -204,3 +204,13 @@ terraform init -no-color
 terraform plan -no-color 
 terraform apply -no-color -auto-approve
 #terraform destroy -no-color -auto-approve
+
+
+## GitLab Setup 
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates tzdata perl
+sudo apt-get install -y postfix  ## local only 
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+sudo EXTERNAL_URL="http://ec2-54-215-251-138.us-west-1.compute.amazonaws.com" apt-get install gitlab-ce
+
+
